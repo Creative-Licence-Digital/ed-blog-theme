@@ -7,10 +7,10 @@
   "name": "ed-blog-theme",
   "description": "",
   "version": "0.0.1",
-  "homepage": "",
+  "homepage": "The theme for the Ed blog",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Creative-Licence-Digital/ed-blog-theme"
   },
   "engines": {
     "node": "0.8 || 0.9 || 0.10"
