@@ -2,9 +2,24 @@
 .page-template .post-header
   margin-bottom: 3.4rem
   text-align: center
+  width: 90%
   max-width: 600px
   margin-left: auto
   margin-right: auto
+
+  .post-title
+    margin-bottom: 1em
+    position: relative
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      bottom: -0.55em
+      width: 40px
+      left: 50%
+      margin-left: -20px
+      border-bottom: 1px solid $grey-l
 
 .post-template .post-title,
 .page-template .post-title
@@ -13,12 +28,6 @@
 .post-template .post-meta,
 .page-template .post-meta
   margin: 0
-
-.post-template .post-date,
-.page-template .post-date
-  padding: 0
-  margin: 0
-  border: none
 
 /* Stop elements, such as img wider than the post content, from
    creating horizontal scroll - slight hack due to imperfections
@@ -98,7 +107,7 @@
     a
       display: inline-block
       font-size: 1.5rem
-      color: #BBC7CC
+      color: $grey-m
       text-decoration: none
 
       + a

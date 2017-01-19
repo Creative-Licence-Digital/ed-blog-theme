@@ -20,24 +20,24 @@
   <style amp-custom>
 @font-face {
   font-family: "Ed Sans";
-  src: url("../fonts/edsans-regular.eot?v=1");
-  src: url("../fonts/edsans-regular.eot?v=1#iefix") format("embedded-opentype"), url("../fonts/edsans-regular.woff?v=1") format("woff"), url("../fonts/edsans-regular.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsans-regular.eot?v=1");
+  src: url("/assets/fonts/edsans-regular.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-regular.woff?v=1") format("woff"), url("/assets/fonts/edsans-regular.ttf?v=1") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ed Sans";
-  src: url("../fonts/edsans-italic.eot?v=1");
-  src: url("../fonts/edsans-italic.eot?v=1#iefix") format("embedded-opentype"), url("../fonts/edsans-italic.woff?v=1") format("woff"), url("../fonts/edsans-italic.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsans-italic.eot?v=1");
+  src: url("/assets/fonts/edsans-italic.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-italic.woff?v=1") format("woff"), url("/assets/fonts/edsans-italic.ttf?v=1") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Ed Sans";
-  src: url("../fonts/edsans-semibold.eot?v=1");
-  src: url("../fonts/edsans-semibold.eot?v=1#iefix") format("embedded-opentype"), url("../fonts/edsans-semibold.woff?v=1") format("woff"), url("../fonts/edsans-semibold.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsans-semibold.eot?v=1");
+  src: url("/assets/fonts/edsans-semibold.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-semibold.woff?v=1") format("woff"), url("/assets/fonts/edsans-semibold.ttf?v=1") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -345,7 +345,7 @@ ul,
 ol,
 dl {
   margin: 0 0 2.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-rendering: geometricPrecision;
   -webkit-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
   -moz-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
@@ -403,7 +403,7 @@ blockquote {
   box-sizing: border-box;
   margin: 1.75em 0 1.75em 0;
   padding: 0 0 0 1.75em;
-  border-left: #4a4a4a 0.4em solid;
+  border-left: #46b4e9 0.4em solid;
   -moz-box-sizing: border-box;
 }
 
@@ -788,10 +788,11 @@ select {
       <h1 class="post-title">{{title}}</h1>
       <section class="post-meta">
         {{#author}}
-        <p class="author">by <a href="{{url}}">{{name}}</a>
+        <p class="author"><a href="{{url}}">{{name}}</a>
         {{/author}}
+        &ensp;&middot;&ensp;
         <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-          {{date format="DD MMM YYYY"}}
+          {{date format="D MMM YYYY"}}
         </time>
         </p>
       </section>
@@ -816,6 +817,9 @@ select {
   <footer class="site-footer clearfix">
     <section class="copyright">
       <a href="{{@blog.url}}">{{@blog.title}}</a>
+      &ensp;
+      {{@blog.description}}
+      &ensp;
       &copy; {{date format="YYYY"}}
     </section>
   </footer>

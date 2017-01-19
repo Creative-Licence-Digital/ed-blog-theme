@@ -62,46 +62,27 @@ h1 small
   font-size: 0.375em
 
 // Size
-.text-xxl
-  font-size: 2.8em !important
-h1
+h1, .text-xl
   font-size: 2.5em
-.text-xl
-  font-size: 1.9em !important
-.text-lg
-  font-size: 1.6em !important
-h2, h3, .text-md
-  font-size: 1.2em
+h2, .text-md
+  font-size: 1.33em
+h3
+  font-size: 1.1em
 h4, .text-sm
   font-size: 0.9em !important
   padding-top: 3px
-.text-xs
-  font-size: 0.7em !important
-
-@media (max-width: $screen-md-max)
-  .text-xl
-    font-size: 1.5em
-  .text-lg, h2, h3, .text-md
-    font-size: 1.2em
-  .text-xs
-    font-size: 0.6em
+h5, h6
+  font-size: 0.8em
 
 @media (max-width: $screen-sm-max)
-  h1, .text-xxl
+  h1
     font-size: 2em
-
-  .text-xl, .text-lg
-    font-size: 1.5em
 
 // Color
 .text-muted
-  color: #b0bcc3
-.text-blue
-  color: $blue
+  color: $grey-d
 .text-white
   color: #fff
-.text-navy
-  color: $navy
 .text-red
   color: $red
 .text-green
@@ -110,7 +91,7 @@ h4, .text-sm
 // Transformation
 .text-lowercase
   text-transform: lowercase
-h4, .text-uppercase
+h4, h5, .text-uppercase
   text-transform: uppercase
 .text-capitalize
   text-transform: capitalize
@@ -118,13 +99,16 @@ h4, .text-uppercase
   text-decoration: underline
 
 // Margin and spacing
-h1, h2, h3, h4, p, ul, ol
+h1, h2, h3, p, ul, ol
   margin: 0 0 1.2em
+
+h4, h5, h6
+  margin: 0 0 0.6em
 
 hr
   margin: 2em 0
 
-h1, h2, h3, h4
+h1, h2, h3
   + p, ul, ol
     margin-top: -1em
 
@@ -194,19 +178,29 @@ hr
 blockquote
   -moz-box-sizing: border-box
   box-sizing: border-box
-  margin: 1.75em 0 1.75em -2.2em
+  margin: 1.75em 0 1.75em
   padding: 0 0 0 1.75em
-  border-left: #4A4A4A 0.4em solid
+  font-size: 1.25em
+  position: relative
+  font-weight: 300
 
-blockquote p
-  margin: 0.8em 0
-  font-style: italic
+  &:before
+    content: ""
+    position: absolute
+    top: 0.2em
+    bottom: 0.35em
+    left: 0
+    border-left: $blue 4px solid
 
-blockquote small
-  display: inline-block
-  margin: 0.8em 0 0.8em 1.5em
-  font-size: 0.9em
-  color: #CCC
+  p
+    margin: 0.8em 0
+
+
+  small
+    display: inline-block
+    margin: 0.8em 0 0.8em 1.5em
+    font-size: 0.9em
+    color: #CCC
 
 blockquote small:before
   content: "\2014 \00A0"

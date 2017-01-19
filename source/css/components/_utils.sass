@@ -29,3 +29,17 @@
   z-index: 10
   min-height: 100%
   background: #fff
+
+=fancy-border
+  &:after
+    content: ""
+    display: block
+    width: 9px
+    height: 9px
+    border: #fff 5px solid
+    position: absolute
+    bottom: 0
+    left: 50%
+    margin: -10px
+    background: $grey-l
+    border-radius: 50%
