@@ -1,0 +1,99 @@
+html
+  height: 100%
+  max-height: 100%
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1)
+
+body
+  height: 100%
+  max-height: 100%
+  font-family: "Ed Sans", serif
+  font-size: 17px
+  line-height: 1.44
+  color: #3A4145
+  font-feature-settings: 'kern' 1
+
+\::-moz-selection
+  background: #D6EDFF
+
+\::selection
+  background: #D6EDFF
+
+a
+  color: lighten($navy, 10)
+  transition: color 0.3s ease
+
+a:hover
+  color: $dark
+
+iframe,
+.fluid-width-video-wrapper
+  display: block
+  margin: 1.75em 0
+
+// When a video is inside the fitvids wrapper, drop the
+// margin on the iframe, cause it breaks stuff.
+.fluid-width-video-wrapper iframe
+  margin: 0
+
+textarea,
+select,
+input,
+button
+  width: 240px
+  padding: 6px 9px
+  margin: 0 0 5px 0
+  outline: 0
+  font-size: 1em
+  font-weight: 100
+  line-height: 1.4em
+  background: #fff
+  border: #e7eef2 1px solid
+  border-radius: 4px
+  box-shadow: none
+  vertical-align: middle
+  color: $dark
+  box-sizing: border-box
+  -webkit-appearance: none
+
+textarea
+  width: 100%
+  max-width: 340px
+  min-width: 250px
+  height: auto
+  min-height: 80px
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus
+  border: #bbc7cc 1px solid
+  background: #fff
+  outline: none
+  outline-width: 0
+
+select
+  width: 270px
+  height: 30px
+  line-height: 30px
+
+button
+  width: auto
+  display: inline-block
+  cursor: pointer
+  outline: none
+  text-decoration: none
+  color: #fff
+  text-align: center
+  font-weight: bold
+  border: rgba(0, 0, 0, 0.05) 0.1em solid
+  background: $blue

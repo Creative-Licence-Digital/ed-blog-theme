@@ -1,0 +1,14 @@
+node_modules
+bower_components
+npm-debug.log.*
+npm-debug.log
+
+*.seed
+*.log
+*.dat
+*.out
+*.pid
+*.gz
+*.swo
+*.map
+*.DS_Store

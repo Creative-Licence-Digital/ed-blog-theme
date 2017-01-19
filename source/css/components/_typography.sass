@@ -1,0 +1,234 @@
+// Alignment
+.text-left
+  text-align: left
+.text-right
+  text-align: right
+.text-center
+  text-align: center
+.text-justify
+  text-align: justify
+
+.inline
+  display: inline
+
+@media (max-width: $screen-xs-max)
+  .text-right
+    text-align: center
+
+@media (max-width: $screen-sm-max)
+  .text-sm-left
+    text-align: left
+  .text-sm-right
+    text-align: right
+  .text-sm-center
+    text-align: center
+  .text-sm-justify
+    text-align: justify
+
+@media (min-width: $screen-sm-min)
+  .text-lg-left
+    text-align: left
+  .text-lg-right
+    text-align: right
+  .text-lg-center
+    text-align: center
+  .text-lg-justify
+    text-align: justify
+
+// Wrapping
+.text-nowrap
+  white-space: nowrap
+.text-pre
+  white-space: pre-line
+.text-ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Style
+.text-italic
+  font-style: italic
+
+// Weight
+.text-normal
+  font-weight: normal
+.text-bold
+  font-weight: 700
+.text-light
+  font-weight: 300
+
+h1 small
+  display: block
+  font-size: 0.375em
+
+// Size
+.text-xxl
+  font-size: 2.8em !important
+h1
+  font-size: 2.5em
+.text-xl
+  font-size: 1.9em !important
+.text-lg
+  font-size: 1.6em !important
+h2, h3, .text-md
+  font-size: 1.2em
+h4, .text-sm
+  font-size: 0.9em !important
+  padding-top: 3px
+.text-xs
+  font-size: 0.7em !important
+
+@media (max-width: $screen-md-max)
+  .text-xl
+    font-size: 1.5em
+  .text-lg, h2, h3, .text-md
+    font-size: 1.2em
+  .text-xs
+    font-size: 0.6em
+
+@media (max-width: $screen-sm-max)
+  h1, .text-xxl
+    font-size: 2em
+
+  .text-xl, .text-lg
+    font-size: 1.5em
+
+// Color
+.text-muted
+  color: #b0bcc3
+.text-blue
+  color: $blue
+.text-white
+  color: #fff
+.text-navy
+  color: $navy
+.text-red
+  color: $red
+.text-green
+  color: $green
+
+// Transformation
+.text-lowercase
+  text-transform: lowercase
+h4, .text-uppercase
+  text-transform: uppercase
+.text-capitalize
+  text-transform: capitalize
+.text-underline
+  text-decoration: underline
+
+// Margin and spacing
+h1, h2, h3, h4, p, ul, ol
+  margin: 0 0 1.2em
+
+hr
+  margin: 2em 0
+
+h1, h2, h3, h4
+  + p, ul, ol
+    margin-top: -1em
+
+li
+  margin: 0 0 0.5em 0
+
+.tight
+  margin-bottom: 0
+
+h1
+  line-height: 1.1
+
+h2, h3, h4
+  line-height: 1.2
+
+h1, h2, h3, h4
+  text-rendering: optimizeLegibility
+  text-rendering: geometricPrecision
+  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1
+
+h1, h2, h3, h4
+  -webkit-font-smoothing: antialiased
+
+ul, ol
+  padding-left: 1.5em
+  p
+    padding-left: 1em
+
+ol ol,
+ul ul,
+ul ol,
+ol ul
+  margin: 0.5em 0 0
+
+dl dt
+  float: left
+  width: 180px
+  overflow: hidden
+  clear: left
+  text-align: right
+  text-overflow: ellipsis
+  white-space: nowrap
+  font-weight: 700
+  margin-bottom: 1em
+
+dl dd
+  margin-left: 200px
+  margin-bottom: 1em
+
+li
+  margin: 0.4em 0
+
+li li
+  margin: 0
+
+li > p:last-of-type
+  margin-bottom: 0
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: #EFEFEF 1px solid
+  margin: 3.2em 0
+  padding: 0
+
+blockquote
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  margin: 1.75em 0 1.75em -2.2em
+  padding: 0 0 0 1.75em
+  border-left: #4A4A4A 0.4em solid
+
+blockquote p
+  margin: 0.8em 0
+  font-style: italic
+
+blockquote small
+  display: inline-block
+  margin: 0.8em 0 0.8em 1.5em
+  font-size: 0.9em
+  color: #CCC
+
+blockquote small:before
+  content: "\2014 \00A0"
+
+blockquote cite
+  font-weight: 700
+
+blockquote cite a
+  font-weight: normal
+
+mark
+  background-color: #fdffb6
+
+.ul-bare
+  list-style: none
+  padding: 0
+
+hr
+  border: none
+  outline: none
+  border-top: 1px solid $grey-l
+
+sup, sub
+  line-height: 0
+

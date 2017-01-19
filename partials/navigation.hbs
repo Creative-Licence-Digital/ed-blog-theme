@@ -1,0 +1,19 @@
+<nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+  {{#if @blog.logo}}
+    <a class="blog-logo" href="{{@blog.url}}">
+      <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+    </a>{{/if}}
+
+  {{#if @blog.navigation}}
+    <ul class="menu-links">
+    {{#foreach navigation}}
+      <li
+        class="nav-{{slug}}{{#if current}} nav-current{{/if}} menu-link"
+        role="presentation"
+      >
+        <a href="{{url absolute="true"}}">{{label}}</a>
+      </li>
+    {{/foreach}}
+  </ul>
+  {{/if}}
+</nav>

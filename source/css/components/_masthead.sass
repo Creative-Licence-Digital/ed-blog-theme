@@ -1,0 +1,59 @@
+.masthead
+  position: relative
+  display: table
+  width: 100%
+  height: 100vh
+  margin-bottom: 5rem
+  text-align: center
+  background: #222 no-repeat center center
+  background-size: cover
+  overflow: hidden
+
+  .inner
+    width: 80%
+
+  &.no-cover
+    min-height: 160px
+    max-height: 36vh
+    background: $blue
+    color: #fff
+
+  .author-template &
+    margin-bottom: 0
+
+  &.post-head
+    height: 56vh
+    min-height: 180px
+
+  &.tag-head
+    height: 40vh
+    min-height: 180px
+
+  &.author-head
+    height: 40vh
+    min-height: 180px
+
+.home-template .masthead:after
+  display: block
+  content: " "
+  width: 150px
+  height: 130px
+  border-radius: 100%
+  position: absolute
+  bottom: 0
+  left: 50%
+  margin-left: -75px
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%)
+
+.no-cover.masthead:after,
+.paged .masthead:after
+  display: none
+
+.no-cover.post-head.masthead,
+.no-cover.author-head.masthead
+  height: auto
+  min-height: 0
+
+  .main-nav
+    margin-bottom: 0
+    position: relative

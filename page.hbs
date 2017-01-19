@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{#post}}
+<header class="masthead post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+  {{navigation}}
+</header>
+
+<main class="content" role="main">
+  <article class="{{post_class}}">
+
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+    </header>
+
+    <section class="post-content">
+      {{content}}
+    </section>
+  </article>
+</main>
+{{/post}}
