@@ -22,8 +22,13 @@ a
   color: lighten($navy, 10)
   transition: color 0.3s ease
 
-a:hover
-  color: $dark
+  &:hover
+    color: $dark
+
+  &[disabled]
+    pointer-events: none
+    text-decoration: none
+    cursor: not-allowed
 
 iframe,
 .fluid-width-video-wrapper
@@ -47,7 +52,7 @@ button
   font-weight: 100
   line-height: 1.4em
   background: #fff
-  border: #e7eef2 1px solid
+  border: $grey-l 1px solid
   border-radius: 4px
   box-shadow: none
   vertical-align: middle
