@@ -4,6 +4,15 @@
       <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
     </a>{{/if}}
 
+  <form data-view="search" id="search-form" autocomplete="off">
+    <img src="/assets/img/search.png" alt="Search the blog..." id="search-icon" />
+    <span id="search-cta">
+      Search the blog...
+    </span>
+    <input id="search-input" type="search" name="search">
+    <ul id="search-results"></ul>
+  </form>
+
   {{#if @blog.navigation}}
     <ul class="menu-links">
     {{#foreach navigation}}
