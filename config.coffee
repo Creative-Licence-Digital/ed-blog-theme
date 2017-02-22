@@ -7,6 +7,9 @@ exports.config =
     hostname: "0.0.0.0"
 
   plugins:
+    sass:
+      mode: 'native'
+
     postcss:
       processors: [
         require("autoprefixer")(["iOS 7", "iOS 8", "> 1%", "Firefox > 20"])
@@ -33,7 +36,7 @@ exports.config =
 
     stylesheets:
       joinTo:
-        "css/app.css": /source\/css\/app.sass/
+        "css/app.css": "source/css/app.sass"
 
   modules:
     nameCleaner: (path) ->
