@@ -27,7 +27,10 @@
     left: 0
     right: 0
     height: 100%
-    background: linear-gradient(to bottom, rgba($navy, 0.4), transparent 85%, rgba($navy, 0.6))
+    background: linear-gradient(to bottom, rgba($navy, 0.4), transparent)
+
+    .home-template &
+      background: linear-gradient(to bottom, rgba($navy, 0.4), transparent 80%, rgba($navy, 0.6))
 
   &.no-cover
     min-height: 160px
