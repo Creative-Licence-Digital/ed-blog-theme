@@ -1,8 +1,6 @@
 /* Every post, on every page, gets this style on its <article> tag */
 .post
   position: relative
-  width: 80%
-  max-width: 710px
   margin: 4rem auto
   padding-bottom: 4rem
   border-bottom: #EBF2F6 1px solid
@@ -24,6 +22,24 @@ body.page-template .post-title
   display: block
   margin-top: 0.5em
 
+.post-image
+  margin: 0 0 1rem
+  height: 92px
+  overflow: hidden
+  border-radius: 3px
+  background: $navy
+
+  img
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    display: block
+    transition: all 300ms
+
+    &:hover
+      opacity: 0.7
+      transform: translateY(-50%) scale(1.02)
+
 .post-meta
   display: block
   margin: 1.75rem 0 0 0
@@ -35,11 +51,12 @@ body.page-template .post-title
   height: 24px
   float: left
   margin-right: 9px
-  margin-top: -4px
-  border-radius: 100%
+  margin-top: 6px
+  margin-bottom: 8px
+  border-radius: 50%
+  border: 1px $grey-l solid
 
 .post-meta a
-  color: $grey-d
   text-decoration: none
 
 .post-meta a:hover
@@ -84,3 +101,53 @@ body.page-template .post-title
   font-size: 1.4rem
   line-height: 1.5em
 
+.col-md-4,
+.col-md-6
+  .post-header
+    min-height: 384px
+  .post-meta
+    min-height: 40px
+
+  @media only screen and (max-width: 500px)
+    .post
+      margin: 2rem 1.2rem
+    .post-header,
+    .post-meta
+      min-height: 0
+
+.col-md-6
+  .post-header
+    min-height: 240px
+
+.post.featured
+  background: white
+  padding: 2rem
+  border: 1px solid rgba(0,0,0,0.06)
+  border-radius: 3px
+  margin-top: -12rem
+  background-clip: padding-box
+  text-align: center
+
+  .post-image
+    margin: -2rem -2rem 1.8rem
+    height: 300px
+    border-radius: 2px 2px 0 0
+
+    img
+      transition-duration: 500ms
+
+  .post-title,
+  .post-excerpt,
+  .post-meta
+    max-width: 560px
+    margin-left: auto
+    margin-right: auto
+
+  @media only screen and (max-width: 500px)
+    padding: 1.2rem
+    margin-top: -8rem
+    text-align: left
+
+    .post-image
+      margin: -1.2rem -1.2rem 1rem
+      height: 160px

@@ -3,6 +3,9 @@
   align-items: stretch
   margin-top: 8rem
 
+  .post
+    width: 66.67%
+
 .read-next-story
   display: flex
   flex-grow: 1
@@ -42,7 +45,7 @@
 
   .post:before
     content: "Read This Next"
-    padding: 4px 10px 5px
+    padding: 6px 8px
     text-transform: uppercase
     letter-spacing: 0.3px
     font-weight: bold
@@ -51,6 +54,7 @@
     border: rgba(255, 255, 255, 0.5) 1px solid
     border-radius: 4px
     transition: all 0.5s ease
+    line-height: 1
 
   &.prev .post:before
     content: "You Might Enjoy"
