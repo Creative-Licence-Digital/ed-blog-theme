@@ -6,7 +6,7 @@
   },
   "name": "ed-blog-theme",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "homepage": "The theme for the Ed blog",
   "repository": {
     "type": "git",
@@ -30,8 +30,7 @@
       "Personal Blogs"
     ]
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "brunch": "^1.8.5",
