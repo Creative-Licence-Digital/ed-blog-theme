@@ -37,8 +37,9 @@ class SignUpView extends Backbone.View
       type: "POST"
       crossDomain: true
       xhrFields: { withCredentials: true }
-      url: "https://admin.edapp.com/register"
-      data: { email, demo: true }
+      url: "https://admin.edapp.com/register-service"
+      contentType: "application/json"
+      data: JSON.stringify { email, demo: true }
       success: =>
         done(false, "Great! Creating your account...")
       error: =>
