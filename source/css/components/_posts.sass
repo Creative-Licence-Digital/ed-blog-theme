@@ -8,7 +8,7 @@
   +fancy-border
 
 body:not(.post-template) .post-title
-  font-size: 2rem
+  font-size: 1.6rem
   margin-bottom: 0.5em
 
 body.page-template .post-title
@@ -104,9 +104,22 @@ body.page-template .post-title
 .col-md-4,
 .col-md-5
   .post-header
-    min-height: 384px
+    height: 312px
+    position: relative
+    overflow: hidden
+
+    .read-more
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      background: #fff
+      background: linear-gradient(to bottom, rgba(#fff, 0), #fff 70%)
+      margin: 0
+      padding-top: 3em
+
   .post-meta
-    min-height: 40px
+    min-height: 60px
 
   @media only screen and (max-width: 500px)
     .post
@@ -117,7 +130,7 @@ body.page-template .post-title
 
 .col-md-5
   .post-header
-    min-height: 240px
+    height: 240px
 
 .post.featured
   background: white
@@ -127,6 +140,9 @@ body.page-template .post-title
   margin-top: -12rem
   background-clip: padding-box
   text-align: center
+
+  .post-title
+    font-size: 2rem
 
   .post-image
     margin: -2rem -2rem 1.8rem
