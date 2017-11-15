@@ -20,24 +20,24 @@
   <style amp-custom>
 @font-face {
   font-family: "Ed Sans";
-  src: url("/assets/fonts/edsans-regular.eot?v=1");
-  src: url("/assets/fonts/edsans-regular.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-regular.woff?v=1") format("woff"), url("/assets/fonts/edsans-regular.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsansneue-regular.eot?v=1");
+  src: url("/assets/fonts/edsansneue-regular.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsansneue-regular.woff?v=1") format("woff"), url("/assets/fonts/edsansneue-regular.ttf?v=1") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ed Sans";
-  src: url("/assets/fonts/edsans-italic.eot?v=1");
-  src: url("/assets/fonts/edsans-italic.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-italic.woff?v=1") format("woff"), url("/assets/fonts/edsans-italic.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsansneue-italic.eot?v=1");
+  src: url("/assets/fonts/edsansneue-italic.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsansneue-italic.woff?v=1") format("woff"), url("/assets/fonts/edsansneue-italic.ttf?v=1") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Ed Sans";
-  src: url("/assets/fonts/edsans-semibold.eot?v=1");
-  src: url("/assets/fonts/edsans-semibold.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsans-semibold.woff?v=1") format("woff"), url("/assets/fonts/edsans-semibold.ttf?v=1") format("truetype");
+  src: url("/assets/fonts/edsansneue-semibold.eot?v=1");
+  src: url("/assets/fonts/edsansneue-semibold.eot?v=1#iefix") format("embedded-opentype"), url("/assets/fonts/edsansneue-semibold.woff?v=1") format("woff"), url("/assets/fonts/edsansneue-semibold.ttf?v=1") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -143,6 +143,7 @@ img {
 
 amp-img {
   border: 0;
+  border-radius: 2px;
 }
 
 svg:not(:root) {
@@ -273,7 +274,7 @@ body {
   height: 100%;
   color: #3a4145;
   letter-spacing: 0.01rem;
-  font-family: "Ed Sans";
+  font-family: "Ed Sans", sans-serif;
   font-size: 1.8rem;
   line-height: 1.44em;
   text-rendering: geometricPrecision;
@@ -543,6 +544,16 @@ amp-iframe,
   margin: 1.75em 0;
 }
 
+amp-iframe[height="568"] {
+  height: 568px;
+}
+
+amp-iframe[width="320"] {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .fluid-width-video-wrapper iframe,
 .fluid-width-video-wrapper amp-iframe {
   margin: 0;
@@ -627,6 +638,10 @@ select {
   -moz-box-sizing: border-box;
 }
 
+.main-header-inner {
+  padding: 2rem 0 3rem;
+}
+
 .content {
   background: #fff;
   padding-top: 32px;
@@ -648,7 +663,9 @@ select {
   text-decoration: none;
   font-size: 16px;
   line-height: 50px;
-  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .post {
@@ -664,14 +681,14 @@ select {
 }
 
 .post-header {
-  margin-bottom: 1rem;
   text-align: center;
   color: #fff;
 }
 
 .post-title {
   font-size: 3.6rem;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
+  padding: 0 0.5em;
   font-weight: normal;
 }
 
@@ -681,7 +698,6 @@ select {
 
 .post-meta {
   display: block;
-  margin: 3px 0 20px;
   color: #cceaf9;
   font-size: 1.3rem;
   line-height: 2.2rem;
@@ -753,7 +769,7 @@ select {
   padding: 1rem 15px;
   max-width: 600px;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.75em;
   text-align: center;
 }
@@ -762,11 +778,30 @@ select {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
   font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .site-footer a:hover {
   border-bottom: #bbc7cc 1px solid;
 }
+
+{{!-- Overrides when an image is available --}}
+{{#post}}
+  {{#if image}}
+  .main-header {
+    background-color: #000;
+    background-image: url({{image absolute="true"}});
+  }
+  .main-header-inner {
+    background-color: rgba(0,0,0,0.4);
+  }
+  .main-header .post-meta,
+  .main-header .post-meta a {
+    color: rgba(255,255,255,0.7);
+  }
+  {{/if}}
+{{/post}}
 
   </style>
 
@@ -781,31 +816,39 @@ select {
 <body class="amp-template">
   {{#post}}
   <header class="main-header">
-    <nav class="blog-title">
-      <a href="{{@blog.url}}">{{@blog.title}}</a>
-    </nav>
-    <header class="post-header">
-      <h1 class="post-title">{{title}}</h1>
-      <section class="post-meta">
-        {{#author}}
-        <p class="author"><a href="{{url}}">{{name}}</a>
-        {{/author}}
-        &ensp;&middot;&ensp;
-        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-          {{date format="D MMM YYYY"}}
-        </time>
-        </p>
-      </section>
-    </header>
+    <div class="main-header-inner">
+      <nav class="blog-title">
+        {{#if @blog.logo}}
+        <a class="blog-logo" href="{{@blog.url}}">
+          <amp-img src="{{@blog.logo}}" alt="{{@blog.title}}" width="40" height="40" />
+        </a>
+        {{else}}
+        <a href="{{@blog.url}}">{{@blog.title}}</a>
+        {{/if}}
+      </nav>
+      <header class="post-header">
+        <h1 class="post-title">{{title}}</h1>
+        <section class="post-meta">
+          {{#author}}
+          <p class="author"><a href="{{url}}">{{name}}</a>
+          {{/author}}
+          &ensp;&middot;&ensp;
+          <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
+            {{date format="D MMM YYYY"}}
+          </time>
+          </p>
+        </section>
+      </header>
+    </div>
   </header>
 
   <main class="content" role="main">
     <article class="post">
-      {{#if image}}
+      {{!-- {{#if image}}
       <figure class="post-image">
         <amp-img src="{{image absolute="true"}}" width="600" height="400" layout="responsive"></amp-img>
       </figure>
-      {{/if}}
+      {{/if}} --}}
 
       <section class="post-content">
         {{amp_content}}
@@ -817,9 +860,9 @@ select {
   <footer class="site-footer clearfix">
     <section class="copyright">
       <a href="{{@blog.url}}">{{@blog.title}}</a>
-      &ensp;
+      <br>
       {{@blog.description}}
-      &ensp;
+      <br>
       &copy; {{date format="YYYY"}}
     </section>
   </footer>
