@@ -21,6 +21,9 @@
     display: block
     min-height: 1px
     box-sizing: border-box
+    flex-grow: 0
+    flex-shrink: 0
+    flex-basis: 100%
 
     img
       max-width: 100%
@@ -48,6 +51,7 @@
   @if ($type == width) and ($index > 0)
     .col-#{$class}-#{$index}
       width: percentage(($index / $grid-columns))
+      flex-basis: percentage(($index / $grid-columns))
 
   @if ($type == offset)
     .col-#{$class}-offset-#{$index}
@@ -76,16 +80,20 @@
 .row
   +clearfix()
 
+.flex-row
+  display: flex
+  flex-wrap: wrap
+
 +make-grid-columns()
-+make-grid("xs", 20px)
++make-grid("xs", 32px)
 
 @media (min-width: $screen-xs-min)
   +make-grid-gutter("sm", 32px)
   +make-row(32px)
 
 @media (min-width: $screen-sm-min)
-  +make-grid-gutter("md", 40px)
+  +make-grid-gutter("md", 32px)
   +make-grid(md, 40px)
 
 @media (min-width: $screen-md-min)
-  +make-grid-gutter("lg", 40px)
+  +make-grid-gutter("lg", 32px)

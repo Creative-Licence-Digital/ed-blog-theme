@@ -1,11 +1,16 @@
 /* Every post, on every page, gets this style on its <article> tag */
 .post
   position: relative
-  margin: 4rem auto
+  margin: 0 auto 4rem
   padding-bottom: 4rem
   border-bottom: #EBF2F6 1px solid
   word-wrap: break-word
+  height: calc(100% - 4rem)
+  box-sizing: border-box
   +fancy-border
+
+  &.featured
+    height: auto
 
 body:not(.post-template) .post-title
   font-size: 1.6rem
@@ -55,6 +60,11 @@ body.page-template .post-title
   margin-bottom: 8px
   border-radius: 50%
   border: 1px $grey-l solid
+
+  .post.featured &
+    display: block
+    margin: 0 auto 4px
+    float: none
 
 .post-meta a
   text-decoration: none
@@ -117,9 +127,6 @@ body.page-template .post-title
       background: linear-gradient(to bottom, rgba(#fff, 0), #fff 70%)
       margin: 0
       padding-top: 3em
-
-  .post-meta
-    min-height: 60px
 
   @media only screen and (max-width: 500px)
     .post
