@@ -29,12 +29,12 @@
       </section>
     </header>
     <div class="row">
-      <div class="col-md-8 col-md-offset-1">
+      <div class="col-xs-12 col-md-8 col-md-offset-1">
         <section class="post-content">
           {{content}}
         </section>
       </div>
-      <div class="col-md-3">
+      <div class="col-xs-12 col-md-3">
         {{#get "posts" limit="5" filter="id:-{{id}}" as |articles|}}
           <aside>
             <h4>Recent Articles</h4>
